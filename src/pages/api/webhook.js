@@ -25,8 +25,8 @@ export default async function handler(req, res) {
             }),
         });
 
-        const { access_token } = await getTokenResponse.json();
-
+        const { access_token, status } = await getTokenResponse.json();
+        /*
         //POST DATA
 
         let postData = "" // TODO: Hanlde post data calculation
@@ -51,9 +51,10 @@ export default async function handler(req, res) {
             ])
         })
 
-        const { status, body } = await postResponse.json();
+        const { status, body } = await postResponse.json(); 
+        */
 
-        res.status(status).json({ body })
+        res.status(status).json({ body: "OK" });
     } catch (e) {
         return Error(e.message);
     }
