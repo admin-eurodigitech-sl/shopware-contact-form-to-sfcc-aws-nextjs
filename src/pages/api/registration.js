@@ -4,22 +4,18 @@ export default async function handler(req, res) {
     try {
         console.log("Register called!");
         const url = new URL(req.url);
+        console.log(url);
+
         const searchParams = url.searchParams;
+
+        console.log(searchParams);
+
 
         const shopId = searchParams.get("shopId");
         const shopUrl = searchParams.get("shopUrl");
-        const secret = searchParams.get("secret");
 
-
-        console.log(req.body);
-
-        console.log(secret);
-
-
-        console.log('App registered for shop:', shopId);
-
-
-        console.log('Shop url is:', shopUrl);
+        console.log(shopId);
+        console.log(shopUrl);
 
 
         res.status(200).json({ body: "Registration successful" });
