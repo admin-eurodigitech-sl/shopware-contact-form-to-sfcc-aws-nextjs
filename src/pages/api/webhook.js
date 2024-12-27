@@ -7,9 +7,10 @@ export default async function handler(req, res) {
             res.status(500).json({ body: "Internal Server Error" });
         }
 
-        
+
         //FUNCTION IS BEING CALLED
         console.log("Hualla loco me han llamado");
+        console.log(req.body);
 
 
         //GET AUTHORIZATION TOKEN
