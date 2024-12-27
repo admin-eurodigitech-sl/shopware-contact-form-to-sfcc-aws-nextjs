@@ -2,6 +2,12 @@ const md5 = require('md5');
 
 export default async function handler(req, res) {
     try {
+        // VALIDATE IF REQUEST IS LEGIT
+        if (req.method !== "POST") {
+            res.status(500).json({ body: "Internal Server Error" });
+        }
+
+        
         //FUNCTION IS BEING CALLED
         console.log("Hualla loco me han llamado");
 
@@ -26,6 +32,7 @@ export default async function handler(req, res) {
         });
 
         const { access_token, status } = await getTokenResponse.json();
+
         /*
         //POST DATA
 
