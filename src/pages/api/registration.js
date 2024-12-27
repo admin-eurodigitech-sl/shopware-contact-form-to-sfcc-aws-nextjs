@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     try {
         console.log("Register called!");
         console.log(req.url);
-
+/*
         const urlSeachParams = new URL(req.url).searchParams;
         const shopId = urlSeachParams.get("shop-id");
         const shopUrl = urlSeachParams.get("shop-url");
@@ -20,6 +20,10 @@ export default async function handler(req, res) {
             secret: "mysecret",
             confirmation_url: "https://shopware-contact-form-to-sfcc-aws-nextjs.vercel.app/api/confirmation"
          });
+
+         */
+
+         res.status(200).json({ body: "OK" });
     } catch (e) {
         return Error(e.message);
     }
