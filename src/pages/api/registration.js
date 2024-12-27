@@ -6,6 +6,8 @@ export default async function handler(req, res) {
 
         const { shopId, shopUrl, secret } = req.body;
 
+        console.log(secret);
+
 
         if (secret !== 'MySecretTest') {
             return res.status(403).send('Invalid secret');
