@@ -5,10 +5,15 @@ export default async function handler(req, res) {
     try {
         console.log("Register called!");
         console.log(req.url);
-/*
+
         const urlSeachParams = new URL(req.url).searchParams;
         const shopId = urlSeachParams.get("shop-id");
         const shopUrl = urlSeachParams.get("shop-url");
+
+        console.log(shopId);
+        console.log(shopUrl);
+
+/*
 
         const hash = crypto.createHmac("sha256", "mysecret");
 
