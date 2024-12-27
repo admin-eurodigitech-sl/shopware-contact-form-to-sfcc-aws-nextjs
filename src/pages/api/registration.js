@@ -2,16 +2,19 @@ const md5 = require('md5');
 
 export default async function handler(req, res) {
     try {
-        console.log("Register!");
+        console.log("Register called!");
+        const url = new URL(req.url);
+        const searchParams = url.searchParams;
 
-        const { shopId, shopUrl, secret } = req.body;
+        const shopId = searchParams.get("shopId");
+        const shopUrl = searchParams.get("shopUrl");
+        const secret = searchParams.get("secret");
+
+
+        console.log(req.body);
 
         console.log(secret);
 
-
-        if (secret !== 'MySecretTest') {
-            return res.status(403).send('Invalid secret');
-        }
 
         console.log('App registered for shop:', shopId);
 
